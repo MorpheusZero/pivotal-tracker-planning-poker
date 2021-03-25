@@ -1,0 +1,127 @@
+<html>
+
+    <head>
+        <!--// Styles //-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="app.css" rel="stylesheet">
+
+        <!--// Scripts //-->
+        <script
+                src="https://code.jquery.com/jquery-3.5.1.min.js"
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+                crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <body>
+
+        <!--// Main Wrapper //-->
+        <div class="container-fluid text-center main-wrapper">
+
+            <!--// Header //-->
+            <div class="row">
+                <div class="col">
+                    <h1>
+                        Pivotal Tracker - Planning Poker Exporter
+                    </h1>
+                    <p>
+                        This tool was created so that a user can export Pivotal Tracker stories into the CSV Format that Planning Poker uses for imports.
+                    </p>
+                </div>
+            </div>
+
+            <div id="div-pt-data">
+                <!--// STEP 1 //-->
+                <div class="row">
+                    <div class="col">
+                        <h3>
+                            Step 1: Pivotal Tracker API Key
+                        </h3>
+                        <p>
+                            Go to your profile page in Pivotal Tracker to obtain your API Key. Copy/Paste it into the box below.
+                        </p>
+                        <div class="form-group">
+                            <label for="txtAPIKey">
+                                API Key
+                            </label>
+                            <input id="txtAPIKey" class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--// STEP 2 //-->
+                <div class="row">
+                    <div class="col">
+                        <h3>
+                            Step 2: Project ID
+                        </h3>
+                        <p>
+                            Copy/Paste Your Project ID into the box below.
+                        </p>
+                        <div class="form-group">
+                            <label for="txtProjectID">
+                                Project ID
+                            </label>
+                            <input id="txtProjectID" class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--// STEP 3 //-->
+                <div class="row">
+                    <div class="col">
+                        <h3>
+                            Step 3: Tag Name
+                        </h3>
+                        <p>
+                            Copy/Paste the name of the tag you want to include in the stories returned. This can be useful for if you tag the stories ahead of time like "to-be-scored" or something.
+                        </p>
+                        <div class="form-group">
+                            <label for="txtTagName">
+                                Tag Name
+                            </label>
+                            <input id="txtTagName" class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--// STEP 4 //-->
+                <div class="row">
+                    <div class="col">
+                        <h3>
+                            Step 4: Get Stories
+                        </h3>
+                        <p>
+                            Press the button below to get the stories that match your search criteria.
+                        </p>
+                        <button id="btnGetStories" class="btn btn-outline-primary">Get Stories</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--// This div gets shown when you are reviewing the returned stories. //-->
+            <div id="div-review" class="hidden">
+
+                <div class="row">
+                    <div class="col">
+                        <h3>
+                            Review Data
+                        </h3>
+                        <p>
+                            These are the stories that were returned according to your search criteria. If this looks correct, press EXPORT.
+                        </p>
+                        <button id="btnGoBack" class="btn btn-danger">Go Back</button>
+                        <div id="review-data" class="text-left"></div>
+
+                        <p class="font-italic">The data below is in the correct CSV format that Planning Poker requires. You can copy the data below and paste it into a text editor and "Save As..." .csv and then import that file into Planning Poker!</p>
+                        <textarea id="export-data"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

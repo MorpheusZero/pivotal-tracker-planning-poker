@@ -1,0 +1,39 @@
+/**
+ * #######################################
+ *
+ * Pivotal Tracker Planning Poker Exporter
+ *
+ *           by Dylan Legendre
+ *     http://www.dylanlegendre.com/
+ *
+ * #######################################
+ */
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: gainsboro;
+}
+
+.hidden {
+    display: none;
+}
+
+body > div.main-wrapper {
+    width: 75%;
+    margin: 35px auto;
+    border: 1px solid gray;
+    padding: 15px;
+    box-shadow: 2px 3px 5px dimgrey;
+    background-color:white;
+}
+
+body input.form-control {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#export-data {
+    width: 95%;
+    height: 200px;
+}
